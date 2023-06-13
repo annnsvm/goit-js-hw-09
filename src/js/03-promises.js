@@ -24,7 +24,7 @@ function onPromiseCreate(e) {
   let stepEl = Number(step.value);
   let amountEl = Number(amount.value);
 
-  for (let i = 0; i <= amountEl; i++) {
+  for (let i = 1; i <= amountEl; i += 1) {
     delayEl += stepEl;
 
     createPromise(i, delayEl)
