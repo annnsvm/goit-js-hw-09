@@ -13,7 +13,7 @@ const dataHours = document.querySelector('[data-hours]');
 const dataMinutes = document.querySelector('[data-minutes]');
 const dataSeconds = document.querySelector('[data-seconds]');
 
-const flatpickrInput = document.getElementById('datetime-picker');
+const flatpickrInput = document.getElementById('#datetime-picker');
 
 startBtn.disabled = true;
 startBtn.addEventListener('click', onStartCounter);
