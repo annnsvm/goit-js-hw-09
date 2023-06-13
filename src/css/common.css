@@ -16,3 +16,31 @@ img {
   display: block;
   max-width: 100%;
 }
+
+button {
+  display: inline-block;
+  width: 70px;
+  height: 48px;
+  border-radius: 15px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fafafa;
+  background-color: cornflowerblue;
+}
+
+button[data-start],
+button[data-stop] {
+  margin-right: 20px;
+}
+
+button[disabled] {
+  background-color: lightgrey;
+  color: #fafafa;
+  cursor: not-allowed;
+}
+
+button:active {
+  position: relative;
+  top: 3px;
+}
