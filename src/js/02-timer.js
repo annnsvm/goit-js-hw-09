@@ -3,6 +3,10 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
+let intervalId = null;
+let selectedDate = null;
+let currentDate = null;
+
 const startBtn = document.querySelector('button[data-start]');
 const dataDays = document.querySelector('[data-days]');
 const dataHours = document.querySelector('[data-hours]');
@@ -37,10 +41,6 @@ function onStartCounter() {
   counter.start();
 }
 
-function addLeadingZero(value) {
-  return String(value).padStart(2, '0');
-}
-
 function convertMs(ms) {
   const second = 1000;
   const minute = second * 60;
@@ -71,11 +71,7 @@ const counter = {
 
       if (deltaTime <= 1000) {
         this.stop();
-        Report.info(
-          '👏 Congratulation! Timer stopped!',
-          'Please, if you want to start timer, choose a date and click on start or reload this page',
-          'Okay'
-        );
+        Report.info(' Congratulation! Timer stopped!');
       }
     }, 1000);
   },
@@ -93,4 +89,8 @@ function updateTimerface({ days, hours, minutes, seconds }) {
   dataHours.textContent = `${hours}`;
   dataMinutes.textContent = `${minutes}`;
   dataSeconds.textContent = `${seconds}`;
+}
+
+function addLeadingZero(value) {
+  return String(value).padStart(2, '0');
 }
